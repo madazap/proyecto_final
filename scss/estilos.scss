@@ -1,0 +1,571 @@
+@import "base/variables";
+@import "base/mixins";
+
+$card-height: 100%;
+$card-box-shadow: 10px;  
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+    border: none;
+	outline: none;
+}
+
+body{
+    font-family: sans-serif;
+    padding-top: 90px 20px 0px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+  }
+
+header{
+    position: fixed;
+    height: 80px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-principal;
+    text-align:left;
+    z-index: 10;
+    
+    .nav_p{
+        @include flex_espacio;
+        max-width: 992px;
+        margin: 0px auto; 
+        
+        .logo{
+            float: left;
+            margin-left: 40px; 
+        }
+        .logo_m{
+            float: left;
+            margin-left: 20px;
+            display: none; 
+        }
+
+
+        .nav_menu{
+            display: flex;
+            margin-right: 40px;
+            list-style: none;
+            li{
+                font-size: 18px;
+                margin: 0 20px;
+                line-height: 80px;
+                width: max-content;
+            }
+            
+        }
+        .nav-toggle{
+            color: white;
+            background: none;
+            border: none;
+            padding: 0px;
+            font-size: 38px;
+            line-height: 40px;
+            display: none;
+        }
+        .carrito{
+           position: relative;
+           top: 12px;
+
+        }
+        
+    }
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: $color-texto;
+}
+
+a:hover{
+    color: $color-links;
+    text-shadow: 3px;
+    transition: 0.5s;
+}
+
+.central{
+    padding-top: 80px;
+    background-color:$color-principal; 
+    display: flex;
+    justify-content: center;
+}
+
+.carouselExampleFade{
+    width: 100%;
+}
+
+.barra{
+    padding: 0.5rem;
+    background-color:$color-principal;
+    color: $color-texto;
+    ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: space-around;
+        li{
+            text-decoration: dashed;
+        }
+    }
+}
+
+//cuerpo
+
+.prods{
+    .prodsPresentacion{
+        h1{
+            text-align: center;
+            padding: 2rem;
+            
+        }
+        p{
+            padding-bottom: 1.4rem;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+    .prods_grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+        grid-auto-rows: minmax(400px, auto);
+        gap: 10px;
+        padding: 20px;
+        grid-auto-flow: dense;
+        
+    }
+
+    .gal_item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .gal_item:hover{
+        filter: opacity(0.8);
+        transform: scale(1.04);
+        z-index: 2;
+    }
+
+    .mano{
+        height: 300px;
+        width: 100%;
+        background-image: url(../Img/craftsmanship-lifestyle1.jpg);
+        grid-area: mano;
+        display: inline-block;
+        color: white;
+        h3{
+            padding-left: 10rem;
+            padding-top: 10rem;
+            padding-bottom: 2rem;
+        }
+    }
+}
+
+    .marquesina{
+        padding-top: 6rem;
+        padding-left: 9rem;
+        background-color: rgb(219, 225, 240);
+        padding-bottom: 2.5rem;
+    }
+    
+    .headContacto{
+        padding-top: 3rem;
+        padding-left: 9rem;
+        .asesores1{
+            display: inline;
+            img{
+                width:120px;
+                height:120px;
+                border-radius: 150px;
+            }
+        }
+        .asesores2{
+            display: inline;
+            img{
+                width:120px;
+                height:120px;
+                border-radius: 150px;
+            }
+        }
+        h5{ 
+                display: inline;
+                color: gray;
+        }
+    }
+      .contactoform{
+         padding-top: 3rem;
+         padding-left: 9rem;
+         padding-bottom: 3rem;
+      }
+
+
+      .flotante{
+          float: right;
+          
+      }
+
+.galeriaSale{
+       @include flex_grlla;
+    .imagen{
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+.nosotrosMed{
+    @include flex_centrado;
+    padding-bottom: 4rem;
+}
+
+footer{
+    background-color: $color-principal;
+    padding: 10px;
+    .containerF{
+        
+        .bott{
+            ul{
+                li{
+                    color: $color-texto;
+                    display: inline-block;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+#menuCompra{
+    padding-top: 120px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    background-color: lightgray;
+}
+
+
+.coleccion{
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out;
+    margin: 12px;
+}
+
+.categoria{
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out;
+    margin: 12px;
+}
+
+.botonMenu{
+    padding: .6rem 1rem;
+    border: 1px black;
+    border-radius: 4px;
+    background-color: #181818;
+    color: #fff;
+    font-size: 1.6rem;
+    text-shadow: 0 -1px 0 rgba(253, 251, 251, 0.5);
+    box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+        0 1px 3px rgba(0,0,0,.2);
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,rgb(68, 67, 66)),to(#0e0d0d));
+        background-image: linear-gradient(rgb(133, 131, 130) 10%,#181817 100%);
+}
+
+
+.nosotros{
+    position: relative;
+    
+}
+
+
+
+.nosotrosIni{
+    @include flex_centrado;
+    background-image: url(../Img/Fondo_nos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    padding-top: 6.5rem;
+    padding-bottom: 2rem;
+        h1{
+            margin-left: 30px;
+        }
+   
+}
+
+.nosotrosMed{
+    position:absolute;
+    top: 220px;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+}
+
+.comunidad{
+    padding-left: 5rem;
+    padding-top: 120px;
+    background-color: lightgray;
+    @include flex_centrado;
+
+}
+
+.video_S{
+    display: none;
+}
+
+.container{
+    padding-top: 3rem;
+    margin-bottom: 3rem;
+}
+@media (max-width: 768px) {
+    
+    /* menos de 768px */
+    body{
+        padding-top: 0px;
+    }
+
+    header{
+        position: fixed;
+        height: 50px;
+       
+        .nav_p{
+            margin: 0px; 
+
+            .logo{
+                display: none;
+            }
+        
+            .logo_m{
+                float: left;
+                margin-left: 20px;
+                display: block; 
+            }
+
+            .nav_menu{
+                @include flex_column;
+                align-items: center;
+                background-color: #0e0d0d;
+                position: fixed;
+                left: 0px;
+                top: 50px;
+                width: 100%;
+                left: 100%;
+                transition: left 0.3s;
+                
+                li{
+                    font-size: 14px;
+                    margin: 0 20px;
+                    line-height: 50px;
+                    width: max-content;
+                }
+            }
+            .carrito{
+                display: none;
+                
+            }
+            .nav-toggle{
+                padding-right: 30px;
+                display: block;
+                
+            }
+            .nav-menu_visible{
+                left: 0;
+            }
+        }
+        
+        
+
+    }
+
+    .barra{
+        padding: 0.3rem;
+        
+        ul{
+            
+            justify-content: space-between;
+            li{
+                font-size: 14px;
+            }
+        }
+    }
+    
+    #menuCompra{
+        padding-top: 70px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        background-color: $color-marquesinas;
+    }
+
+    .coleccion{
+        font-size: 14px;
+        padding-top: 15px;
+        padding-left: 8px;
+        padding-bottom: 20px;
+        margin: 1px;
+    }
+    
+    .categoria{
+        font-size: 14px;
+        padding-top: 15px;
+        padding-left: 8px;
+        padding-bottom: 20px;
+        margin: 1px;
+    }
+    
+    .botonMenu{
+        padding: .6rem 0.3rem;
+        border: 1px black;
+        border-radius: 4px;
+        background-color: #181818;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+
+.nosotrosIni{
+    padding-top: 4rem;
+    font-size: 13px;
+    @include flex_centrado;
+    .video_B{
+        display: none;
+    }
+    .video_S{
+        display: block;
+    }
+}
+
+    .marquesina{
+        padding-top: 5rem;
+        padding-left: 2rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .headContacto{
+        padding-top: 3rem;
+        padding-left: 2rem;
+        .asesores1{
+            img{
+                width:100px;
+                height:100px;
+               
+            }
+        }
+        .asesores2{
+            img{
+                width:80px;
+                height:80px;
+            }
+        }
+        h5{ 
+                display: inline;
+                color: black;
+        }
+    }
+
+    .contactoform{
+        padding-left: 3rem;
+     }
+
+     .comunidad{
+        padding-left: 2rem;
+        padding-top: 80px;
+        font-size: 14px;
+        h2{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+
+}
+
+
+@media (max-width: 575px){
+
+    .barra{
+        padding: 0.2rem;
+        ul{
+            li{
+                font-size: 14px;
+                .icono{
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+    .prods{
+
+        .prodsPresentacion{
+            h1{
+                font-size: 20px;
+                padding: 1rem;
+            }
+            p{
+                padding-bottom: 1rem;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 14px;
+            }
+        }
+    
+        .gal_item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            
+        }
+        .gal_item:hover{
+            transform: none;
+        }
+    
+        .mano{
+            display: none;
+        }
+    }
+    
+    #menuCompra{
+        padding-top: 60px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .coleccion{
+        font-size: 12px;
+        padding-left: 5px;
+        
+    }
+    
+    .categoria{
+        font-size: 12px;
+        padding-left: 5px;
+        
+    }
+    
+    .botonMenu{
+        font-size: 0.8rem;
+    }
+
+}

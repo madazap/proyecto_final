@@ -1,0 +1,24 @@
+
+
+@mixin flex_espacio{
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex_grlla{
+    padding-top: 5rem;
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+       grid-gap: 10px;
+}
+
+@mixin flex_centrado {
+    
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex_column{
+    display: flex;
+    flex-direction: column;
+}
